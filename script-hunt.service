@@ -1,0 +1,15 @@
+[Unit]
+Description=Script Hunt Telegram Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/script_hunt
+ExecStart=/home/ubuntu/script_hunt/.venv/bin/python /home/ubuntu/script_hunt/bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
